@@ -126,7 +126,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)studIter.next();
 			i++;
 			%>
-			<td><div align="left"><img src="https://octet1.csr.oberlin.edu/octet/Bb/Photos/expo/<%=thisUser.getUserName() %>/profileImage" onError="imageError(this)">
+			<td><div align="left"><img src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
