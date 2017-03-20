@@ -128,9 +128,11 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			%>
 			<td><div align="left"><img src="https://octet1.csr.oberlin.edu/octet/Bb/Photos/expo/<%=thisUser.getUserName() %>/profileImage" onError="imageError(this)">
 				<br/>
-				<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %><br/>
+				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
+					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
+				</a><br/>
 //				<%=thisUser.getBusinessFax() %><br/>
-//				<a href='mailto:<%=thisUser.getEmailAddress()%> '><br/>
+//				<br/>
 //				Class Dean <%=thisUser.getBusinessPhone2() %><br/>
 //				<%=thisUser.getDepartment() %> 
 			</div></td>
