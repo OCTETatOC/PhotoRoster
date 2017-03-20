@@ -45,7 +45,7 @@
 	 <link>
             <type value="tool"/>
             <name value="Student Roster"/>
-            <url value="links/Roster-Public.jsp"/>
+            <url value="links/roster-Public.jsp"/>
             <description value="A tool which displays photos of enrolled students." />
             <icons>
               <listitem value="images/icon.gif"/>
