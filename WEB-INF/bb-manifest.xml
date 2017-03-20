@@ -48,7 +48,7 @@
             <url value="links/roster-Public.jsp"/>
             <description value="A tool which displays photos of enrolled students." />
             <icons>
-              <listitem value="images/icon.gif"/>
+              <listitem value="images/Roster.png"/>
             </icons>
           </link>
           </links>
