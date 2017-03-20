@@ -130,9 +130,10 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 				<br>
 				<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %><br/>
 				<%=thisUser.getBusinessFax() %><br/>
-				<a href="mailto:<%=thisUser.getEmailAddress()"%> %><br/>
+			<!--	<a href="mailto:<%=thisUser.getEmailAddress()"%> %><br/>
 				Class Dean <%=thisUser.getBusinessPhone2() %><br/>
-				<%=thisUser.getDepartment() %></div></td>
+				<%=thisUser.getDepartment() %> -->
+			</div></td>
 			<%
 			if(i%4==0)
 			{
