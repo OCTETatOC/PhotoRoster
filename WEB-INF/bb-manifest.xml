@@ -2,10 +2,10 @@
 <manifest>
   <!-- core extension information -->
   <plugin>
-    <name value= "Photo Roster - Confidential"/>
-    <handle value= "ConfRostEX"/>
+    <name value= "Photo Rosters"/>
+    <handle value= "PhotoRoster"/>
     <description value= "Student and Participant Roster for Leaders and Instructors."/>
-    <version value= "2.0"/>
+    <version value= "3.0"/>
     <requires>
     	<bbversion value="9.1.14"/>
     </requires>
@@ -22,14 +22,14 @@
 
     <!-- Tools defined by this extension -->
     <application-defs>
-      <application handle="ConfRostEX" type="course" use-ssl="true" name="Photo Roster - Confidential" can-allow-guest="false"
+      <application handle="PhotoRoster" type="course" use-ssl="true" name="Photo Roster" can-allow-guest="false"
        small-icon="images/Roster.png" large-icon="images/Roster.png">
         <description lang="en_US">Application installed as part of the OCTET Student Roster Suite.</description>
         <links>
 		   <link>
             <type value="course_tool"/>
             <name value="Photo Roster - Confidential"/>
-            <url value="links/roster.jsp"/>
+            <url value="links/roster-Confidential.jsp"/>
             <description value="A tool which displays photos of enrolled students with links to email addresses and other information for those that have access to the Control Panel." />
             <icons>
               <listitem value="images/Roster.png"/>
@@ -37,6 +37,24 @@
           </link>
 		   </links>
 	  </application>
+	      
+      <application handle="studentroster" type="course" use-ssl="false" name="Student Roster" can-allow-guest="false"
+       small-icon="" large-icon="">
+        <description lang="en_US">Application installed as part of the OCTET Student Roster.</description>
+        <links>
+		   <link>
+            <type value="tool"/>
+            <name value="Student Roster"/>
+            <url value="links/Roster-Public.jsp"/>
+            <description value="A tool which displays photos of enrolled students." />
+            <icons>
+              <listitem value="images/icon.gif"/>
+            </icons>
+          </link>
+ 
+		   </links>
+	  </application>
+
    </application-defs>
     
     
