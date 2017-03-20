@@ -44,9 +44,9 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 <bbUI:docTemplate title="Student Roster">
 <bbUI:coursePage courseId="<%=courseId%>">
 <bbUI:breadcrumbBar handle="control_panel" isContent="true">
- <bbUI:breadcrumb>Student Roster EX</bbUI:breadcrumb>
+ <bbUI:breadcrumb>Student Roster</bbUI:breadcrumb>
 </bbUI:breadcrumbBar>
-<bbUI:titleBar>Student Roster EX</bbUI:titleBar>
+<bbUI:titleBar>Student Roster</bbUI:titleBar>
 <%
 // makes sure that this option should be available for the course we are in
 // Exco course along with any non-department, non-advising oganisations do not have access
@@ -126,7 +126,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)studIter.next();
 			i++;
 			%>
-			<td><div align="left"><img src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+			<td><div align="left"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
