@@ -133,31 +133,46 @@ If you are interested in making the photos available to your students, go to you
 				}
 				%>
 				<%=thisUser.getGivenName()%>&nbsp;<%=thisUser.getFamilyName()%><br/>
-				<span class='style2'><a href="mailto:<%=thisUser.getEmailAddress() %>"><%=thisUser.getEmailAddress() %></a></span><br/>
-                <%=thisUser.getDepartment() %><br/>
-                <%=thisUser.getBusinessFax() %><br/>
+				<span class='style2'>
+					<a href="mailto:<%=thisUser.getEmailAddress() %>"><%=thisUser.getEmailAddress() %></a>
+				</span><br/>
+             		 	<%=thisUser.getDepartment() %><br/>
+           			<%=thisUser.getBusinessFax() %><br/>
 				<span class="style2">
 			 	<% 
 			 	if (thisUser.getOtherName().length() > 1) {
-		 			if (thisUser.getOtherName().substring(3).startsWith("Grier")) {%>Class Dean: <br/> <a href="mailto:Brenda.Grier-Miller@oberlin.edu">Brenda.Grier-Miller@oberlin.edu</a>
+		 			if (thisUser.getOtherName().substring(3).startsWith("Grier")) 
+					{%>Class Dean: <br/> <a href="mailto:Brenda.Grier-Miller@oberlin.edu">Brenda.Grier-Miller@oberlin.edu</a>
 		 			<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Davidson")) {%>Class Dean: <br/> <a href="mailto:Kimberly.Jackson.Davidson@oberlin.edu">Kimberly.Jackson.Davidson@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Davidson")) 
+					{%>Class Dean: <br/> <a href="mailto:Kimberly.Jackson.Davidson@oberlin.edu">Kimberly.Jackson.Davidson@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Burgdorf")) {%>Class Dean: <br/> <a href="mailto:Monique.Burgdorf@oberlin.edu">Monique.Burgdorf@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Burgdorf")) 
+					{%>Class Dean: <br/> <a href="mailto:Monique.Burgdorf@oberlin.edu">Monique.Burgdorf@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Donaldson")) {%>Class Dean: <br/> <a href="mailto:Chris.Donaldson@oberlin.edu">Chris.Donaldson@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Donaldson")) 
+					{%>Class Dean: <br/> <a href="mailto:Chris.Donaldson@oberlin.edu">Chris.Donaldson@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Flood")) {%>Class Dean: <br/> <a href="mailto:Lori.Flood@oberlin.edu">Lori.Flood@oberlin.edu></a>
+					if (thisUser.getOtherName().substring(3).startsWith("Flood")) 
+					{%>Class Dean: <br/> <a href="mailto:Lori.Flood@oberlin.edu">Lori.Flood@oberlin.edu></a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Hayden")) {%>Class Dean: <br/> <a href="mailto:Matthew.Hayden@oberlin.edu">Matthew.Hayden@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Hayden")) 
+					{%>Class Dean: <br/> <a href="mailto:Matthew.Hayden@oberlin.edu">Matthew.Hayden@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Salim")) {%>Class Dean: <br/> <a href="mailto:Amy.Salim@oberlin.edu">Amy.Salim@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Salim")) 
+					{%>Class Dean: <br/> <a href="mailto:Amy.Salim@oberlin.edu">Amy.Salim@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Kawaguchi")) {%>Class Dean: <br/> <a href="mailto:Shozo.Kawaguchi@oberlin.edu">Shozo.Kawaguchi@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Kawaguchi")) 
+					{%>Class Dean: <br/> <a href="mailto:Shozo.Kawaguchi@oberlin.edu">Shozo.Kawaguchi@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Hamdan")) {%>Class Dean: <br/> <a href="mailto:Dana.Hamdan@oberlin.edu">Dana.Hamdan@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Hamdan")) 
+					{%>Class Dean: <br/> <a href="mailto:Dana.Hamdan@oberlin.edu">Dana.Hamdan@oberlin.edu</a>
 					<% } else 
-					if (thisUser.getOtherName().substring(3).startsWith("Myers")) {%>Class Dean: <br/> <a href="mailto:tmyers@oberlin.edu">tmyers@oberlin.edu</a>
+					if (thisUser.getOtherName().substring(3).startsWith("Brandt")) 
+					{%>Class Dean: <br/> <a href="mailto:Anna.Brandt@oberlin.edu">Anna.Brandt@oberlin.edu</a>
+					<% } else 
+					if (thisUser.getOtherName().substring(3).startsWith("Myers")) 
+					{%>Class Dean: <br/> <a href="mailto:tmyers@oberlin.edu">tmyers@oberlin.edu</a>
 					<% }
 				}
 			 	%>
