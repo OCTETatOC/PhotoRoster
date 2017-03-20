@@ -14,7 +14,7 @@
 <SCRIPT LANGUAGE="JavaScript">
 function imageError(theImage)
 {
-theImage.src="https://octet1.csr.oberlin.edu/octet/Bb/Faculty/img/noimage.jpg";
+theImage.src="https://idcard.oberlin.edu/feed/photo/profile.php?id=nophotos&b";
 theImage.onerror = null;
 }
 </SCRIPT>
