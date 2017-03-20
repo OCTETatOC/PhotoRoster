@@ -40,7 +40,7 @@
 	      
       <application handle="studentroster" type="course" use-ssl="true" name="Photo Roster" can-allow-guest="false"
        small-icon="images/Roster.png" large-icon="images/Roster.png">
-        <description lang="en_US">Application installed as part of the OCTET Student Roster.</description>
+        <description lang="en_US">Application installed as part of the OCTET Student Roster Suite.</description>
          <links>
 	 <link>
             <type value="tool"/>
