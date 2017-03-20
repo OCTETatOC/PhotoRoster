@@ -7,7 +7,7 @@
     <description value= "Student and Participant Roster for Leaders and Instructors."/>
     <version value= "3.0"/>
     <requires>
-    	<bbversion value="9.1.14"/>
+    	<bbversion value="9.1"/>
     </requires>
     <vendor>
       <id value="octt"/>
@@ -26,7 +26,7 @@
        small-icon="images/Roster.png" large-icon="images/Roster.png">
         <description lang="en_US">Application installed as part of the OCTET Student Roster Suite.</description>
         <links>
-		   <link>
+	<link>
             <type value="course_tool"/>
             <name value="Photo Roster - Confidential"/>
             <url value="links/roster-Confidential.jsp"/>
@@ -34,15 +34,15 @@
             <icons>
               <listitem value="images/Roster.png"/>
             </icons>
-          </link>
-		   </links>
-	  </application>
+         </link>
+	 </links>
+     </application>
 	      
-      <application handle="studentroster" type="course" use-ssl="false" name="Student Roster" can-allow-guest="false"
-       small-icon="" large-icon="">
+      <application handle="studentroster" type="course" use-ssl="true" name="Photo Roster" can-allow-guest="false"
+       small-icon="images/Roster.png" large-icon="images/Roster.png">
         <description lang="en_US">Application installed as part of the OCTET Student Roster.</description>
-        <links>
-		   <link>
+         <links>
+	 <link>
             <type value="tool"/>
             <name value="Student Roster"/>
             <url value="links/Roster-Public.jsp"/>
@@ -51,9 +51,8 @@
               <listitem value="images/icon.gif"/>
             </icons>
           </link>
- 
-		   </links>
-	  </application>
+          </links>
+	</application>
 
    </application-defs>
     
