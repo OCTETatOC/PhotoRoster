@@ -113,8 +113,8 @@ If you are interested in making the photos available to your students, go to you
 		%><span class='style2'>If you are off-campus, the photos will not display. To see them from off-campus you will need to use VPN to connect to our network before viewing this page. 
 		Information on connecting via VPN can be found at <a href="http://citwiki.oberlin.edu/index.php/VPN#Where_do_I_get_VPN_software.3F" target="_blank"> http://citwiki.oberlin.edu/index.php/VPN </a></span> .<br/>
 		<br/><b>Student/Participant members in this site:</b><br/><table cellpadding="10" style="page-break-inside:avoid"><tr>
-		
-		<a href="/webapps/blackboard/execute/displayEmail?navItem=cp_send_email_all_students&course_id=<%=courseId%> ">email all students/participants in this site</a>
+		<%Id%>
+		<a href="/webapps/blackboard/execute/displayEmail?navItem=cp_send_email_all_students&course_id=<%courseId%> ">email all students/participants in this site</a>
 		<%
 		BbList.Iterator studIter = students.getFilteringIterator();
 		int s = 0;
