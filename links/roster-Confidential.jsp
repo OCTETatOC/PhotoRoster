@@ -18,7 +18,7 @@ function imageError(theImage)
 theImage.src="https://idcard.oberlin.edu/feed/photo/profile.php?id=nophotos&b";
 theImage.onerror = null;
 }
-</script>
+</SCRIPT>
 <%@ taglib uri="/bbData" prefix="bbData"%>                
 <%@ taglib uri="/bbUI" prefix="bbUI"%>
 <bbData:context id="ctx">
@@ -55,7 +55,7 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
  <bbUI:breadcrumb>Confidential Photo Roster</bbUI:breadcrumb>
 </bbUI:breadcrumbBar>
 <bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar>
-<div style="background-color:#FFFFFF;padding:20px;">
+<div style="background-color:#FFFFFF; padding:20px;">
 <%
 // makes sure that this option should be available for the course we are in
 // Exco course along with any non-department, non-advising oganizations do not have access
@@ -114,7 +114,7 @@ If you are interested in making the photos available to your students, go to you
 		Information on connecting via VPN can be found at <a href="http://citwiki.oberlin.edu/index.php/VPN#Where_do_I_get_VPN_software.3F" target="_blank"> http://citwiki.oberlin.edu/index.php/VPN </a></span> .<br/>
 		<br/><b>Student/Participant members in this site:</b><br/><table cellpadding="10" style="page-break-inside:avoid"><tr>
 		
-		<a href="/webapps/blackboard/execute/displayEmail?navItem=cp_send_email_all_students&course_id= <%=bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id")) %> ">email all students/participants in this site</a>
+		<a href="/webapps/blackboard/execute/displayEmail?navItem=cp_send_email_all_students&course_id=<%=bbPm.generateId(Course.DATA_TYPE, request.getParameter('course_id')) %> ">email all students/participants in this site</a>
 		<%
 		BbList.Iterator studIter = students.getFilteringIterator();
 		int s = 0;
