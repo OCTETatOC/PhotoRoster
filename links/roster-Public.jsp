@@ -130,7 +130,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
-				</a><br/>				
+				</a><br/>
+				<%=thisUser.getTitle() %> <br/>
 			</div></td>
 			<%
 			if(i%4==0)
