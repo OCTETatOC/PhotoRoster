@@ -45,12 +45,9 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 	font-weight: 300;
 	font-size: 80%;
 	text-shadow: 1px 1px #DCDCDC;
-#figure{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    overflow:hidden;
-}
+	 }
+#RoundedDiv{
+    border-radius: 60px 60px 25px 25px; 
 }	
 -->
  </style>
@@ -129,7 +126,7 @@ If you are interested in making the photos available to your students, go to you
 			User thisUser = (User)studIter.next();
 			s++;
 			%>
-			<td width="170px"><div align="left"><div id="figure"> <img width="110" height="150" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName()%>&b" onError="imageError(this)">
+			<td width="170px"><div align="center"><div id="RoundedDiv"> <img width="110" height="150" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName()%>&b" onError="imageError(this)">
 				</div><br>
 				<%
 				PortalRole userPortRole = thisUser.getPortalRole();
