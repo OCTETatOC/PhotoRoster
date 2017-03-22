@@ -38,6 +38,9 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 	color: #FF0000;
 	font-weight: bold;
 }
+#RoundedDiv {
+	border-radius: 60px 60px 25px 25px;
+	 }
 -->
  </style>
  
@@ -126,8 +129,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)studIter.next();
 			i++;
 			%>
-			<td><div align="left"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
-				<br/>
+			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+				</div><br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
 				</a><br/>
