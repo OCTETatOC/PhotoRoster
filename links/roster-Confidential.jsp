@@ -48,6 +48,7 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 	 }
 #RoundedDiv{
     border-radius: 60px 60px 25px 25px; 
+    overflow:hidden;
 }	
 -->
  </style>
