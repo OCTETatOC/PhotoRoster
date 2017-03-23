@@ -13,7 +13,7 @@
 %>
 <SCRIPT LANGUAGE="JavaScript">
 function imageError(theImage)
-{
+{	
 theImage.src="https://idcard.oberlin.edu/feed/photo/profile.php?id=nophotos&b";
 theImage.onerror = null;
 }
@@ -131,6 +131,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			Collections.sort(students,comparator);
 		%>
 		<table cellpadding="10">
+			<tr><hr><hr></tr>
 		<tr>
 		<%
 		// display the pictures of instructors
@@ -141,7 +142,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td > <div align="center" id="RoundedDiv">INSTRUCTOR <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+			<td > <div align="center">INSTRUCTOR <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
@@ -155,7 +156,6 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			}
 		}
 		%>
-		<hr>
 		<tr>
 		<%
 		// display the pictures of TAs
@@ -166,7 +166,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td><div align="center" id="RoundedDiv">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
+			<td><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
 				<br/>
 				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
@@ -180,8 +180,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			}
 		}
 		%>
-		<hr/>
-		<tr>
+		
+		<tr><hr><hr>STUDENTS
 		<%
 		// display the pictures of students
 		BbList.Iterator studIter = students.getFilteringIterator();
@@ -190,7 +190,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		{ 
 			User thisUserStu = (User)studIter.next();
 			i++;
-			%><p>STUDENTS</p>
+			%>
 			<td><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
