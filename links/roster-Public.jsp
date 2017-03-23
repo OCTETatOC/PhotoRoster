@@ -60,10 +60,10 @@ String id = ((Course)courseId.load()).getCourseId();
 boolean course;
 
 try{
-		// try converting the first 4 characters of the id to an integer (regular course id's start with the year they are taught)
-		Integer temp = new Integer(id.substring(0,4));
-		// make sure that the course is not EXCO
-		if(id.substring(6).startsWith("-EXCO-")){
+	// try converting the first 4 characters of the id to an integer (regular course id's start with the year they are taught)
+	Integer temp = new Integer(id.substring(0,4));
+	// make sure that the course is not EXCO
+	if(id.substring(6).startsWith("-EXCO-")){
 			course = false;
 		}
 		else{
@@ -77,16 +77,16 @@ if(id.startsWith("P-")){
 			course = true;
 		}
 // if the option should be available - make available only for departments, advising organizations and regular courses
-if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads") || id.startsWith("SL-ODS") || id.startsWith ("OC-Fac_Coll") || id.startsWith("CD-") ||course)
+if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads") || id.startsWith("SL-ODS") || id.startsWith ("OC-Fac_Coll") || id.startsWith("CON-") ||id.startsWith("CD-") ||course)
 { 
 	// if current user has clicked "I understand", display the photos
 	//if(request.getParameter("displayPhotos")!=null)
 	//{
 %>
-			<span class="style1">Note:</span> These pictures are confidential and should only be used to help you
-			identify the students in your course. Please make every effort to guard the
-			confidentiality of your students by keeping the printed copy in your
-			possession or storing it in a secure location at all times.
+		<span class="style1">Note:</span> These pictures are confidential and should only be used to help you
+		identify the students in your course. Please make every effort to guard the
+		confidentiality of your students by keeping the printed copy in your
+		possession or storing it in a secure location at all times.
 			<%
 		// create a Dbloader for users
 		UserDbLoader loader = (UserDbLoader) bbPm.getLoader( UserDbLoader.TYPE );
@@ -113,6 +113,14 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			{	//add the user to the list of students if he/she is a student
 				 students.add(thisUser);
 			}
+			if (cmData.getRole() == cmData.getRole().INSTRUCTOR)
+			{	//add the user to the list of students if he/she is a student
+				 instructor.add(thisUser);
+			}
+			if (cmData.getRole() == cmData.getRole().TEACHING_ASSISTANT)
+			{	//add the user to the list of students if he/she is a student
+				 TA.add(thisUser);
+			}
 		} 
 		
 			// sort students by last name, first name
@@ -120,7 +128,49 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			comparator.appendSecondaryComparator(new GenericFieldComparator(BaseComparator.ASCENDING,"getGivenName",User.class));
 			Collections.sort(students,comparator);
 		%>
-		<table cellpadding="30"><tr>
+		<table cellpadding="30">
+		<tr>
+		<%
+		// display the pictures of instructors
+		BbList.Iterator instructorIter = instructors.getFilteringIterator();
+		int i = 0;
+		while(instructorIter.hasNext())
+		{ 
+			User thisUser = (User)instructorIter.next();
+			i++;
+			%>
+			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+				</div><br/>
+				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
+					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
+				</a><br/>
+				<%=thisUser.getTitle() %> <br/>
+			</div></td>
+			<%
+			if(i%4==0)
+			{
+			%></tr>
+			<tr>
+		<%
+		// display the pictures of instructors
+		BbList.Iterator TAIter = TA.getFilteringIterator();
+		int i = 0;
+		while(TAIter.hasNext())
+		{ 
+			User thisUser = (User)TAIter.next();
+			i++;
+			%>
+			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+				</div><br/>
+				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
+					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
+				</a><br/>
+				<%=thisUser.getTitle() %> <br/>
+			</div></td>
+			<%
+			if(i%4==0)
+			{
+			%></tr><tr>
 		<%
 		// display the pictures of students
 		BbList.Iterator studIter = students.getFilteringIterator();
