@@ -142,7 +142,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			i++;
 			%>
 			<td > <div align="center" id="RoundedDiv">INSTRUCTOR <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
-				
+				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
 				</a><br/>
@@ -167,7 +167,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			i++;
 			%>
 			<td><div align="center" id="RoundedDiv">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
-				
+				<br/>
 				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
 				</a><br/>
