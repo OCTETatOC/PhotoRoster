@@ -159,7 +159,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		 i = 0;
 		while(TAIter.hasNext())
 		{ 
-			User thisUser = (User)TAIter.next();
+		//	User thisUser = (User)TAIter.next();
 			i++;
 			%>
 			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">			
@@ -179,7 +179,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		 i = 0;
 		while(studIter.hasNext())
 		{ 
-			User thisUser = (User)studIter.next();
+		//	User thisUser = (User)studIter.next();
 			i++;
 			%>
 			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
