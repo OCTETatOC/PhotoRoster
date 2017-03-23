@@ -153,6 +153,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			{
 			%></tr>
 			<tr>
+			}
+		}
 		<%
 		// display the pictures of TAs
 		BbList.Iterator TAIter = TA.getFilteringIterator();
@@ -173,6 +175,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			if(i%4==0)
 			{
 			%></tr><tr>
+			}
+		}
 		<%
 		// display the pictures of students
 		BbList.Iterator studIter = students.getFilteringIterator();
