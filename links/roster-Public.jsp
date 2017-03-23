@@ -134,7 +134,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		<tr>
 		<%
 		// display the pictures of instructors
-		BbList.Iterator instructorIter = instructors.getFilteringIterator();
+		BbList.Iterator instructorIter = instructor.getFilteringIterator();
 		int i = 0;
 		while(instructorIter.hasNext())
 		{ 
