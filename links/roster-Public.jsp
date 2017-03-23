@@ -141,21 +141,22 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td rowspan="2"> INSTRUCTOR <div align="center" id="RoundedDiv"><img height="300px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
-				</div>
+			<td > <div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+				INSTRUCTOR 
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
 				</a><br/>
-				<%=thisUser.getTitle() %> <br/>
+				<%=thisUser.getTitle() %> <br/></div>
 			</td>
 			<%
 			if(i%4==0)
 			{
-			%>  <%
+			%></tr><tr>  <%
 			}
 		}
 		%>
-		
+		<hr>
+		<tr>
 		<%
 		// display the pictures of TAs
 		BbList.Iterator TAIter = TA.getFilteringIterator();
@@ -165,8 +166,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
-				</div><br/>
+			<td><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
+				Teaching Asst.<br/>
 				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
 				</a><br/>
@@ -189,9 +190,9 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		{ 
 			User thisUserStu = (User)studIter.next();
 			i++;
-			%>
-			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
-				</div><br/>
+			%><p>STUDENTS</p>
+			<td><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
+				<br/>
 				<a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
 					<%=thisUserStu.getGivenName() %> &nbsp;<%=thisUserStu.getFamilyName() %>
 				</a><br/>
