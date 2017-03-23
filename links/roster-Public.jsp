@@ -100,6 +100,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		CourseMembershipDbLoader cmLoader = (CourseMembershipDbLoader)bbPm.getLoader( CourseMembershipDbLoader.TYPE );
 		// create a list to hold all students
 		BbList students = new BbList();
+		BbList instructors = new BbList();
+		BbList TA = new BbList();
 		
 		// iterate thorugh the user list, keep only people enrolled with role Student/Participant
 		BbList.Iterator userIter = userlist.getFilteringIterator();
@@ -110,15 +112,15 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			// now use the CourseMembershipDBLoader to load the CourseMembership data for this user in this course.
 			CourseMembership cmData = cmLoader.loadByCourseAndUserId(courseId, thisUser.getId());
 			if (cmData.getRole() == cmData.getRole().STUDENT)
-			{	//add the user to the list of students if he/she is a student
+			{	//add the user to the list if he/she is a student
 				 students.add(thisUser);
 			}
 			if (cmData.getRole() == cmData.getRole().INSTRUCTOR)
-			{	//add the user to the list of students if he/she is a student
+			{	//add the user to the list if he/she is a Instructor
 				 instructor.add(thisUser);
 			}
 			if (cmData.getRole() == cmData.getRole().TEACHING_ASSISTANT)
-			{	//add the user to the list of students if he/she is a student
+			{	//add the user to the list if he/she is a TA
 				 TA.add(thisUser);
 			}
 		} 
