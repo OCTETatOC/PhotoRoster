@@ -131,7 +131,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			Collections.sort(students,comparator);
 		%>
 		<table cellpadding="10">
-			<tr><hr><hr></tr>
+			<tr><td><hr><hr></td></tr>
 		<tr>
 		<%
 		// display the pictures of instructors
@@ -156,7 +156,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			}
 		}
 		%>
-		<tr>
+			</tr><tr>
 		<%
 		// display the pictures of TAs
 		BbList.Iterator TAIter = TA.getFilteringIterator();
@@ -181,7 +181,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		}
 		%>
 		
-		<tr><hr><hr>STUDENTS
+			</tr><tr><td><hr><hr>STUDENTS</td></tr><tr>
 		<%
 		// display the pictures of students
 		BbList.Iterator studIter = students.getFilteringIterator();
