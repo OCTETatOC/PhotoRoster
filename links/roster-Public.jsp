@@ -100,7 +100,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		CourseMembershipDbLoader cmLoader = (CourseMembershipDbLoader)bbPm.getLoader( CourseMembershipDbLoader.TYPE );
 		// create a list to hold all students
 		BbList students = new BbList();
-		BbList instructors = new BbList();
+		BbList instructor = new BbList();
 		BbList TA = new BbList();
 		
 		// iterate thorugh the user list, keep only people enrolled with role Student/Participant
