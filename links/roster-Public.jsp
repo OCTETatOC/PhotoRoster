@@ -141,22 +141,21 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td><div align="center"><div id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
-				</div><br/>
+			<td rowspan="2"> INSTRUCTOR <div align="center" id="RoundedDiv"><img height="300px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+				</div>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
 				</a><br/>
 				<%=thisUser.getTitle() %> <br/>
-			</div></td>
+			</td>
 			<%
 			if(i%4==0)
 			{
-			%></tr>	<tr><%
+			%>  <%
 			}
 		}
 		%>
-		<hr/>
-		<tr>
+		
 		<%
 		// display the pictures of TAs
 		BbList.Iterator TAIter = TA.getFilteringIterator();
