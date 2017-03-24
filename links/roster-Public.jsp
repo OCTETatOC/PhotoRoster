@@ -48,7 +48,7 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 <bbUI:docTemplate title="Student Roster">
 <bbUI:coursePage courseId="<%=courseId%>">
 <bbUI:breadcrumbBar handle="control_panel" isContent="false">
-<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb>
+<!--<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb> -->
 </bbUI:breadcrumbBar>
 <bbUI:titleBar>Student Roster</bbUI:titleBar>
 <%
@@ -84,11 +84,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 	//{
 %>
 <div ><div style="background-color:#FFFFFF; padding:20px;">
-		<span class="style1">Note:</span> These pictures are confidential and should only be used to help you
-		identify the students in your course. Please make every effort to guard the
-		confidentiality of your students by keeping the printed copy in your
-		possession or storing it in a secure location at all times.
-			<%
+		<%
 		// create a Dbloader for users
 		UserDbLoader loader = (UserDbLoader) bbPm.getLoader( UserDbLoader.TYPE );
 		blackboard.base.BbList userlist = null;
@@ -159,7 +155,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		}
 		%>
 			</tr>
-			<tr><td colspan="5"><span class="style1">Teaching Asst(s)</span></td></tr>
+			<tr><td colspan="5"><span class="style1">TEACHING ASST(s)</span></td></tr>
 			<tr>
 		<%
 		// display the pictures of TAs
@@ -218,7 +214,8 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 }
 else // exco courses and general organizations do not have access to student photos
 {
-out.print("This option is not available for your course/organization at this time.");
+out.print("This option is not available for your course/organization at this time. 
+Feel free to contact bbhelp@oberlin.edu if you believe this is a mistake.");
 }
 %>
 	</div>
