@@ -83,6 +83,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 	//if(request.getParameter("displayPhotos")!=null)
 	//{
 %>
+<div class="container"><div style="background-color:#FFFFFF; padding:20px;">
 		<span class="style1">Note:</span> These pictures are confidential and should only be used to help you
 		identify the students in your course. Please make every effort to guard the
 		confidentiality of your students by keeping the printed copy in your
@@ -215,6 +216,7 @@ else // exco courses and general organizations do not have access to student pho
 out.print("This option is not available for your course/organization at this time.");
 }
 %>
+	</div>
 </bbUI:coursePage>
 </bbUI:docTemplate>
  </bbData:context>
