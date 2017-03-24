@@ -132,7 +132,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			Collections.sort(students,comparator);
 		%>
 		<table cellpadding="10">
-			<tr><td><hr><hr></td></tr>
+			<tr><td colspan="5"><span class="style1">INSTRUCTOR(S)</span></td></tr>
 		<tr>
 		<%
 		// display the pictures of instructors
@@ -143,21 +143,23 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td > <div align="center">INSTRUCTOR <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+			<td > <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
 				</a><br/>
-				<%=thisUser.getTitle() %> <br/></div>
+				<%=thisUser.getTitle() %> <br/>
 			</td>
 			<%
-			if(i%4==0)
+			if(i%5==0)
 			{
 			%></tr><tr>  <%
 			}
 		}
 		%>
-			</tr><tr>
+			</tr>
+			<tr><td colspan="5"><span class="style1">Teaching Asst(s)</span></td></tr>
+			<tr>
 		<%
 		// display the pictures of TAs
 		BbList.Iterator TAIter = TA.getFilteringIterator();
@@ -175,14 +177,16 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 				<%=thisUserTA.getTitle() %> <br/>
 			</div></td>
 			<%
-			if(i%4==0)
+			if(i%5==0)
 			{
 			%></tr><tr><%
 			}
 		}
 		%>
 		
-			</tr><tr><td><hr><hr>STUDENTS</td></tr><tr>
+			</tr>
+			<tr><td colspan="5"><hr><span class="style1">STUDENTS</span></td></tr>
+			<tr>
 		<%
 		// display the pictures of students
 		BbList.Iterator studIter = students.getFilteringIterator();
@@ -200,7 +204,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 				<%=thisUserStu.getTitle() %> <br/>
 			</div></td>
 			<%
-			if(i%4==0)
+			if(i%5==0)
 			{
 			%></tr><tr><%
 			}
