@@ -47,9 +47,8 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
  
 <bbUI:docTemplate title="Student Roster">
 <bbUI:coursePage courseId="<%=courseId%>">
-<bbUI:breadcrumbBar handle="control_panel" isContent="true">
- <bbUI:breadcrumb>Student Roster</bbUI:breadcrumb>
-</bbUI:breadcrumbBar>
+<bbUI:breadcrumbBar handle="control_panel" isContent="true"></bbUI:breadcrumbBar>
+<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb>
 <bbUI:titleBar>Student Roster</bbUI:titleBar>
 <%
 // makes sure that this option should be available for the course we are in
@@ -83,7 +82,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 	//if(request.getParameter("displayPhotos")!=null)
 	//{
 %>
-<div class="container"><div style="background-color:#FFFFFF; padding:20px;">
+<div ><div style="background-color:#FFFFFF; padding:20px;">
 		<span class="style1">Note:</span> These pictures are confidential and should only be used to help you
 		identify the students in your course. Please make every effort to guard the
 		confidentiality of your students by keeping the printed copy in your
@@ -132,6 +131,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			Collections.sort(students,comparator);
 		%>
 		<table cellpadding="10">
+			<tr><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td></tr>
 			<tr><td colspan="5"><span class="style1">INSTRUCTOR(S)</span></td></tr>
 		<tr>
 		<%
@@ -169,7 +169,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
+			<td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
 				<br/>
 				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
@@ -196,7 +196,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserStu = (User)studIter.next();
 			i++;
 			%>
-			<td width="170"><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
+			<td width="170"><div valign="top" align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
 					<%=thisUserStu.getGivenName() %> &nbsp;<%=thisUserStu.getFamilyName() %>
