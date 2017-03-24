@@ -143,7 +143,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td > <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+			<td width="170"> <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
@@ -169,7 +169,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
+			<td td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
 				<br/>
 				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
@@ -196,7 +196,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserStu = (User)studIter.next();
 			i++;
 			%>
-			<td><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
+			<td width="170"><div align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
 				<br/>
 				<a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
 					<%=thisUserStu.getGivenName() %> &nbsp;<%=thisUserStu.getFamilyName() %>
