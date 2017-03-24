@@ -50,7 +50,6 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 <bbUI:breadcrumbBar handle="control_panel" isContent="false">
 <!--<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb> -->
 </bbUI:breadcrumbBar>
-<bbUI:titleBar>Student Roster</bbUI:titleBar>
 <%
 // makes sure that this option should be available for the course we are in
 // Exco course along with any non-department, non-advising oganisations do not have access
