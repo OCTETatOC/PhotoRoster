@@ -35,7 +35,7 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
  <style type="text/css">
 <!--
 .style1 {
-	color: #FF0000;
+	color: saddlebrown;
 	font-weight: bold;
 }
 #RoundedDiv {
