@@ -32,7 +32,14 @@ BbPersistenceManager bbPm = BbServiceManager.getPersistenceService().getDbPersis
 //get the course id for the current course (that we are in) - this is the internal id e.g. "_2345_1"
 Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id")); 
 %>
- <style type="text/css">
+
+<bbUI:docTemplate title="Student Roster">
+<bbUI:coursePage courseId="<%=courseId%>">
+<bbUI:breadcrumbBar handle="control_panel" isContent="false">
+<!--<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb> -->
+</bbUI:breadcrumbBar>
+
+<style type="text/css">
 <!--
 .style1 {
 	color: saddlebrown;
@@ -45,11 +52,6 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 -->
  </style>
  
-<bbUI:docTemplate title="Student Roster">
-<bbUI:coursePage courseId="<%=courseId%>">
-<bbUI:breadcrumbBar handle="control_panel" isContent="false">
-<!--<bbUI:breadcrumb>Student Roster</bbUI:breadcrumb> -->
-</bbUI:breadcrumbBar>
 <%
 // makes sure that this option should be available for the course we are in
 // Exco course along with any non-department, non-advising oganisations do not have access
@@ -78,11 +80,7 @@ if(id.startsWith("P-")){
 // if the option should be available - make available only for departments, advising organizations and regular courses
 if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads") || id.startsWith("SL-ODS") || id.startsWith ("OC-Fac_Coll") || id.startsWith("CON-") ||id.startsWith("CD-") ||course)
 { 
-	// if current user has clicked "I understand", display the photos
-	//if(request.getParameter("displayPhotos")!=null)
-	//{
 %>
-<div style="background-color:#FFFFFF; padding:20px;">
 		<%
 		// create a Dbloader for users
 		UserDbLoader loader = (UserDbLoader) bbPm.getLoader( UserDbLoader.TYPE );
@@ -126,9 +124,13 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			comparator.appendSecondaryComparator(new GenericFieldComparator(BaseComparator.ASCENDING,"getGivenName",User.class));
 			Collections.sort(students,comparator);
 		%>
-		<table cellpadding="10">
-			<tr><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td></tr>
-			<tr><td colspan="5"><span class="style1">INSTRUCTOR(S)</span></td></tr>
+
+<div style="background-color:white; padding:20px; width=96%; max-width:960px;">	
+<h2><%=id%></h2>
+	
+<table cellpadding="10">
+<tr><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td><td width="170"></td></tr>
+<tr><td colspan="5"><span class="style1">INSTRUCTOR(S)</span></td></tr>
 		<tr>
 		<%
 		// display the pictures of instructors
@@ -139,11 +141,11 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td width="170"> <br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName() %>" onError="imageError(this)">
+			<td width="170"> <br/><img height="120px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">
 				<br/>
-				<a href='mailto:<%=thisUser.getEmailAddress()%> '>
+				<u><a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
-				</a><br/>
+					</a></u><br/>
 				<%=thisUser.getTitle() %> <br/>
 			</td>
 			<%
