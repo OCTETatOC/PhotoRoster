@@ -82,7 +82,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 	//if(request.getParameter("displayPhotos")!=null)
 	//{
 %>
-<div ><div style="background-color:#FFFFFF; padding:20px;">
+<div style="background-color:#FFFFFF; padding:20px;">
 		<%
 		// create a Dbloader for users
 		UserDbLoader loader = (UserDbLoader) bbPm.getLoader( UserDbLoader.TYPE );
@@ -216,7 +216,7 @@ else // exco courses and general organizations do not have access to student pho
 out.print("This option is not available for your course/organization at this time. Feel free to contact bbhelp@oberlin.edu if you believe this is a mistake.");
 }
 %>
-	</div>
+</div>
 </bbUI:coursePage>
 </bbUI:docTemplate>
  </bbData:context>
