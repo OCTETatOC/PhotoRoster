@@ -15,13 +15,7 @@
 
 <%@ taglib uri="/bbData" prefix="bbData"%>                
 <%@ taglib uri="/bbUI" prefix="bbUI"%>
-<bbData:context id="ctx">
-<bbUI:docTemplate title="Confidential Photo Roster">
-<bbUI:coursePage courseId="<%=courseId%>">
-<bbUI:breadcrumbBar handle="control_panel" isContent="true">
-	<bbUI:breadcrumb>Confidential Photo Roster</bbUI:breadcrumb>
-</bbUI:breadcrumbBar>
-<!-- <bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar> -->	
+	
 <%
 /* This building block displays Photos of students in every course and organization.
  * The student roster is only accessible through the control panel, thus only users with
@@ -32,8 +26,14 @@ BbPersistenceManager bbPm = BbServiceManager.getPersistenceService().getDbPersis
 
 //get the course id for the current course (that we are in) - this is the internal id e.g. "_2345_1"
 Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id")); 
-
 %>
+<bbData:context id="ctx">
+<bbUI:docTemplate title="Confidential Photo Roster">
+<bbUI:coursePage courseId="<%=courseId%>">
+<bbUI:breadcrumbBar handle="control_panel" isContent="true">
+	<bbUI:breadcrumb>Confidential Photo Roster</bbUI:breadcrumb>
+</bbUI:breadcrumbBar>
+<!-- <bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar> -->
 <script LANGUAGE="JavaScript">
 function imageError(theImage)
 {
@@ -113,7 +113,7 @@ if(!id.startsWith("StuOrg") && !id.matches(".*EXCO.*")){
 <div style="background-color:white; padding:20px; width=96%; max-width:960px;">
 
 <!-- Conditions of use statement -->
-	<% ((Course)courseId.load()).getCourseId();%>
+<%=courseId%>
 <span class="style1">Note:</span> <span class="style2"><i>The data here should be considered confidential. It is intended for use by instructors to get to know 
 their students, contact them and, if needed, contact their class deans.  Please make every effort to guard the
 confidentiality of your students by keeping any printed copy in your possession or storing it in a secure location at all times.
