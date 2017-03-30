@@ -59,7 +59,6 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
  <bbUI:breadcrumb>Confidential Photo Roster</bbUI:breadcrumb>
 </bbUI:breadcrumbBar>
 <!-- <bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar> -->
-<div style="background-color:#FFFFFF; padding:20px;">
 <%
 // makes sure that this option should be available for the course we are in
 // Exco course along with any non-department, non-advising oganizations do not have access
@@ -70,11 +69,7 @@ if(!id.startsWith("StuOrg") && !id.matches(".*EXCO.*")){
 //if the list is modified, be sure to also change it in the Student Roster Public version
 %>
 
-<span class="style1">Note:</span> <span class="style2"><i>The data here should be considered confidential. It is intended for use by instructors to get to know 
-their students, contact them and, if needed, contact their class deans.  Please make every effort to guard the
-confidentiality of your students by keeping any printed copy in your possession or storing it in a secure location at all times.
-		
-If you are interested in making the photos available to your students, go to your course menu and make the 'Student Roster' tool available.<br/></i></span>
+
 			<%
 		// create a Dbloader for users
 		UserDbLoader loader = (UserDbLoader) bbPm.getLoader( UserDbLoader.TYPE );
@@ -112,11 +107,21 @@ If you are interested in making the photos available to your students, go to you
 		
 		
 
-		
-		// display the pictures of students
-		%><span class='style2'>If you are off-campus, the photos will not display. To see them from off-campus you will need to use VPN to connect to our network before viewing this page. 
+%>		
+// Conditions of use	
+
+<div style="background-color:#FFFFFF; padding:20px; width=96%"; max-width=1000px;>
+<span class="style1">Note:</span> <span class="style2"><i>The data here should be considered confidential. It is intended for use by instructors to get to know 
+their students, contact them and, if needed, contact their class deans.  Please make every effort to guard the
+confidentiality of your students by keeping any printed copy in your possession or storing it in a secure location at all times.
+<br/>		
+If you are interested in making the photos available to your students, go to your course menu and make the 'Student Roster' tool available.<br/></i></span>
+
+// display the pictures of students
+		<span class='style2'>If you are off-campus, the photos will not display. To see them from off-campus you will need to use VPN to connect to our network before viewing this page. 
 		Information on connecting via VPN can be found at <a href="http://citwiki.oberlin.edu/index.php/VPN#Where_do_I_get_VPN_software.3F" target="_blank"> http://citwiki.oberlin.edu/index.php/VPN </a></span> .<br/>
-		<br/><b>Student/Participant members in this site:</b><br/><table cellpadding="10" style="page-break-inside:avoid"><tr>
+		<br/><b>Student/Participant members in this site:</b><br/>
+	<table cellpadding="10" style="page-break-inside:avoid"><tr>
 		
 		<a href="/webapps/blackboard/execute/displayEmail?navItem=cp_send_email_all_students&course_id=<%= request.getParameter("course_id") %> ">email all students/participants in this site</a>
 		<%
@@ -188,7 +193,7 @@ If you are interested in making the photos available to your students, go to you
 			if(s%5==0)
 			{
 				if(s%20==0){
-					%></tr> </table style="page-break-inside:avoid">
+					%></tr> </table>
 					<span style="page-break-after:always"></span>
 					<table cellpadding="10">
 					<tr><%
