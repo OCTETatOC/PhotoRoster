@@ -58,7 +58,7 @@ Id courseId = bbPm.generateId(Course.DATA_TYPE, request.getParameter("course_id"
 <bbUI:breadcrumbBar handle="control_panel" isContent="true">
  <bbUI:breadcrumb>Confidential Photo Roster</bbUI:breadcrumb>
 </bbUI:breadcrumbBar>
-<bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar>
+<!-- <bbUI:titleBar>Confidential Photo Roster</bbUI:titleBar> -->
 <div style="background-color:#FFFFFF; padding:20px;">
 <%
 // makes sure that this option should be available for the course we are in
