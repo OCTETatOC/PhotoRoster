@@ -127,7 +127,7 @@ If you are interested in making the photos available to your students, go to you
 			User thisUser = (User)studIter.next();
 			s++;
 			%>
-			<td width="170px"><div align="center"><div id="RoundedDiv"> <img width="110" height="150" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUser.getUserName()%>&b" onError="imageError(this)">
+			<td width="170px"><div align="center"><div id="RoundedDiv"> <img height="150" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUID()%>" onError="imageError(this)">
 				</div><br>
 				<%
 				PortalRole userPortRole = thisUser.getPortalRole();
@@ -137,6 +137,7 @@ If you are interested in making the photos available to your students, go to you
 				}
 				%>
 				<%=thisUser.getGivenName()%>&nbsp;<%=thisUser.getFamilyName()%><br/>
+				<%=thisUser.getTitle()%><br/>
 				<span class='style2'>
 					<a href="mailto:<%=thisUser.getEmailAddress() %>"><%=thisUser.getEmailAddress() %></a>
 				</span><br/>
