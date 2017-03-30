@@ -141,7 +141,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUser = (User)instructorIter.next();
 			i++;
 			%>
-			<td width="170"> <br/><img height="120px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">
+			<td width="170"><img height="100px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">
 				<br/>
 				<u><a href='mailto:<%=thisUser.getEmailAddress()%> '>
 					<%=thisUser.getGivenName() %> &nbsp;<%=thisUser.getFamilyName() %>
@@ -167,7 +167,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUserTA.getBatchUid()%>" onError="imageError(this)">			
+			<td width="170"><div align="center">Teaching Asst.<br/><img height="100px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUserTA.getBatchUid()%>" onError="imageError(this)">			
 				<br/>
 				<u><a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
@@ -183,7 +183,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		%>
 		
 			</tr>
-			<tr><td colspan="5"><hr><hr/><span class="style1">STUDENTS</span></td></tr>
+			<tr><td colspan="5"><hr/><span class="style1">STUDENTS</span></td></tr>
 			<tr>
 		<%
 		// display the pictures of students
@@ -194,7 +194,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserStu = (User)studIter.next();
 			i++;
 			%>
-			<td width="170"><div valign="top" align="center" id="RoundedDiv"><img height="150px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUserStu.getBatchUid()%>" onError="imageError(this)">
+			<td width="170"><div valign="top" align="center" id="RoundedDiv"><img height="120px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUserStu.getBatchUid()%>" onError="imageError(this)">
 				<br/>
 				<u><a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
 					<%=thisUserStu.getGivenName() %> &nbsp;<%=thisUserStu.getFamilyName() %>
