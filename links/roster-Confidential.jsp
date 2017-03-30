@@ -127,7 +127,7 @@ If you are interested in making the photos available to your students, go to you
 			User thisUser = (User)studIter.next();
 			s++;
 			%>
-			<td width="170px"><div align="center"><div id="RoundedDiv"> <img height="150" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUID()%>" onError="imageError(this)">
+			<td width="170px"><div align="center"><div id="RoundedDiv"> <img height="150" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">
 				</div><br>
 				<%
 				PortalRole userPortRole = thisUser.getPortalRole();
