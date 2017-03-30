@@ -113,7 +113,7 @@ if(!id.startsWith("StuOrg") && !id.matches(".*EXCO.*")){
 <div style="background-color:white; padding:20px; width=96%; max-width:960px;">
 
 <!-- Conditions of use statement -->
-<%=id%>
+	<h2><%=id%></h2>
 <span class="style1">Note:</span> <span class="style2"><i>The data here should be considered confidential. It is intended for use by instructors to get to know 
 their students, contact them and, if needed, contact their class deans.  Please make every effort to guard the
 confidentiality of your students by keeping any printed copy in your possession or storing it in a secure location at all times.
