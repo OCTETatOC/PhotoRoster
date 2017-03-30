@@ -156,7 +156,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		}
 		%>
 			</tr>
-			<tr><td colspan="5"><span class="style1">TEACHING ASST(s)</span></td></tr>
+			<tr><td colspan="5"><hr/><span class="style1">TEACHING ASST(s)</span></td></tr>
 			<tr>
 		<%
 		// display the pictures of TAs
@@ -167,11 +167,11 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserTA = (User)TAIter.next();
 			i++;
 			%>
-			<td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserTA.getUserName() %>" onError="imageError(this)">			
+			<td width="170"><div align="center">Teaching Asst.<br/><img height="150px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">			
 				<br/>
-				<a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
+				<u><a href='mailto:<%=thisUserTA.getEmailAddress()%> '>
 					<%=thisUserTA.getGivenName() %> &nbsp;<%=thisUserTA.getFamilyName() %>
-				</a><br/>
+					</a></u><br/>
 				<%=thisUserTA.getTitle() %> <br/>
 			</div></td>
 			<%
@@ -183,7 +183,7 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 		%>
 		
 			</tr>
-			<tr><td colspan="5"><hr><span class="style1">STUDENTS</span></td></tr>
+			<tr><td colspan="5"><hr><hr/><span class="style1">STUDENTS</span></td></tr>
 			<tr>
 		<%
 		// display the pictures of students
@@ -194,11 +194,11 @@ if(id.startsWith("DEPT-") || id.startsWith("AD-") || id.startsWith("DSt-AmReads"
 			User thisUserStu = (User)studIter.next();
 			i++;
 			%>
-			<td width="170"><div valign="top" align="center" id="RoundedDiv"><img height="150px" src="https://idcard.oberlin.edu/feed/photo/profile.php?id=<%=thisUserStu.getUserName() %>" onError="imageError(this)">
+			<td width="170"><div valign="top" align="center" id="RoundedDiv"><img height="150px" src="https://resdev.oberlin.edu/feed/photo/blank/<%=thisUser.getBatchUid()%>" onError="imageError(this)">
 				<br/>
-				<a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
+				<u><a href='mailto:<%=thisUserStu.getEmailAddress()%> '>
 					<%=thisUserStu.getGivenName() %> &nbsp;<%=thisUserStu.getFamilyName() %>
-				</a><br/>
+					</a></u><br/>
 				<%=thisUserStu.getTitle() %> <br/>
 			</div></td>
 			<%
