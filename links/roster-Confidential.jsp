@@ -108,7 +108,7 @@ if(!id.startsWith("StuOrg") && !id.matches(".*EXCO.*")){
 		
 
 %>		
-// Conditions of use	
+<!-- Conditions of use statement -->
 
 <div style="background-color:#FFFFFF; padding:20px; width=96%"; max-width=1000px;>
 <span class="style1">Note:</span> <span class="style2"><i>The data here should be considered confidential. It is intended for use by instructors to get to know 
@@ -117,7 +117,7 @@ confidentiality of your students by keeping any printed copy in your possession 
 <br/>		
 If you are interested in making the photos available to your students, go to your course menu and make the 'Student Roster' tool available.<br/></i></span>
 
-// display the pictures of students
+<!-- display the pictures of students -->
 		<span class='style2'>If you are off-campus, the photos will not display. To see them from off-campus you will need to use VPN to connect to our network before viewing this page. 
 		Information on connecting via VPN can be found at <a href="http://citwiki.oberlin.edu/index.php/VPN#Where_do_I_get_VPN_software.3F" target="_blank"> http://citwiki.oberlin.edu/index.php/VPN </a></span> .<br/>
 		<br/><b>Student/Participant members in this site:</b><br/>
