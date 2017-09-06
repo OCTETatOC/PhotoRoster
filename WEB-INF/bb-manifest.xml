@@ -5,9 +5,9 @@
     <name value= "Photo Rosters"/>
     <handle value= "PhotoRoster"/>
     <description value= "Student and Participant Roster for Leaders and Instructors."/>
-    <version value= "3.0"/>
+    <version value= "3.1"/>
     <requires>
-    	<bbversion value="9.1"/>
+    	<bbversion value="3200.0.2-rel.37+f07d42b"/>
     </requires>
     <vendor>
       <id value="octt"/>
