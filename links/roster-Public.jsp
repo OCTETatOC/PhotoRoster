@@ -14,7 +14,7 @@
 <SCRIPT LANGUAGE="JavaScript">
 function imageError(theImage)
 {	
-theImage.src="https://idcard.oberlin.edu/feed/photo/profile.php?id=nophotos&b";
+theImage.src="http://octet1.csr.oberlin.edu/octet/Bb/120px-BLANK_ICON.png";
 theImage.onerror = null;
 }
 </SCRIPT>
